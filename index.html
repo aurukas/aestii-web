@@ -49,9 +49,13 @@
     }
 
     .lockup {
-      width: clamp(124px, 20.8vw, 299px);
+      width: clamp(190px, 32vw, 460px);
       height: auto;
       margin-top: -4vh;
+    }
+    /* laptops and desktops: smaller logo */
+    @media (min-width: 1024px) {
+      .lockup { width: clamp(124px, 20.8vw, 299px); }
     }
     @media (max-width: 560px) {
       .lockup { width: 50vw; }
