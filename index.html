@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aestii Therme Resort &amp; Spa — Klaipėda</title>
+  <meta name="description" content="Aestii Therme Resort &amp; Spa Klaipėdoje.">
+  <meta name="theme-color" content="#121212">
+  <link rel="canonical" href="https://aestii.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aestii.com/">
+  <meta property="og:title" content="Aestii Therme Resort &amp; Spa — Klaipėda">
+  <meta property="og:description" content="Aestii Therme Resort &amp; Spa Klaipėdoje.">
+  <meta property="og:image" content="https://aestii.com/assets/share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="lt_LT">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <style>
+    body {
+      background: var(--ink);
+      color: var(--pale);
+    }
+
+    .stage {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .stage .sea { position: fixed; z-index: -2; }
+
+    /* darken: heavier at the edges and bottom, lighter where the light falls */
+    .stage::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(120% 90% at 50% 46%, rgb(26 30 31 / 0.18) 0%, rgb(18 18 18 / 0.62) 100%),
+        linear-gradient(to bottom, rgb(18 18 18 / 0.35), rgb(18 18 18 / 0) 35%, rgb(18 18 18 / 0) 60%, rgb(18 18 18 / 0.7));
+    }
+
+    .lockup {
+      width: clamp(190px, 32vw, 460px);
+      height: auto;
+      margin-top: -4vh;
+    }
+    @media (max-width: 560px) {
+      .lockup { width: 50vw; }
+    }
+
+    .js .lockup { opacity: 0; }
+    .js.is-ready .lockup {
+      opacity: 1;
+      transition: opacity 1.8s ease 0.6s;
+    }
+  </style>
+</head>
+<body>
+  <main class="stage">
+    <video class="sea" autoplay muted loop playsinline preload="auto"
+           poster="assets/video/sea-poster.jpg" aria-hidden="true">
+      <source src="assets/video/sea.webm" type="video/webm">
+      <source src="assets/video/sea.mp4" type="video/mp4">
+    </video>
+
+    <h1>
+      <img class="lockup" src="assets/logo/aestii-white-descriptor.svg"
+           width="730" height="370" alt="Aestii Therme Resort &amp; Spa Klaipėda">
+    </h1>
+  </main>
+
+  <footer class="chrome">
+    <button class="motion-toggle" type="button"
+            data-label-pause="Pristabdyti vaizdo įrašą" data-label-play="Leisti vaizdo įrašą"
+            aria-label="Pristabdyti vaizdo įrašą">
+      <svg class="icon-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3" height="12"/><rect x="9" y="1" width="3" height="12"/></svg>
+      <svg class="icon-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1l10 6-10 6z"/></svg>
+    </button>
+  </footer>
+
+  <script src="assets/js/video.js"></script>
+</body>
+</html>
